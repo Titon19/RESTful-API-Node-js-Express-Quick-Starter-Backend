@@ -1,8 +1,8 @@
-import express from "express"
+import express, { Router } from "express"
 import eventRoutes from "./eventRoutes"
 import { verifyToken, verifyRole } from "../../middlewares/verifyToken"
 
-const adminRoutes: express.Router = express.Router()
+const adminRoutes: Router = express.Router()
 
 adminRoutes.use(verifyToken)
 adminRoutes.use(verifyRole("admin"))
